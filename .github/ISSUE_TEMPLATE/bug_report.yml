@@ -1,0 +1,120 @@
+name: Bug report
+description: Report something that isn't working as expected
+title: "[Bug]: "
+labels: ["needs-triage", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve NTI Messenger. Please search the existing
+        issues first — if you find the same problem, add your details to it
+        instead of opening a duplicate.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      description: Shown on the Play Store / App Store listing, or in the app's settings (include the build number if you know it).
+      placeholder: e.g. 1.0.0 (build 1793247587)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - iOS
+        - Both
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device and OS version
+      description: The phone/tablet model and operating-system version.
+      placeholder: e.g. Pixel 7, Android 14
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Component area
+      description: Which part of the app is affected?
+      options:
+        - Auth & accounts (registration, login, Friend ID, password recovery, email)
+        - Messaging (direct and group chats, sending, receipts, unsend)
+        - Friends (requests, adding by Friend ID, friend list)
+        - Calls (voice and video calls, ringing, call logs)
+        - Media & storage (images, files, voice messages, storage quota)
+        - Notifications (push, ringtones, unread badges)
+        - Devices & security (device list, sessions, logout, emergency wipe)
+        - UI/UX (look-and-feel, navigation, accessibility)
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear, short description of the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Number every step so we can follow along.
+      placeholder: |
+        1. Open the app and sign in
+        2. Tap ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / error message
+      description: Paste any on-screen error or stack trace. Do not include passwords or tokens.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Screenshots, screen recordings or sample files
+      description: Drag and drop them here (or attach them in a follow-up comment).
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and this is not a duplicate.
+          required: true
+        - label: This is not a security vulnerability (those go through the private security link).
+          required: true

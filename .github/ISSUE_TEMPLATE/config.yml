@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security or privacy report
+    url: https://github.com/utarn/nti-messenger-public/security/advisories/new
+    about: Please report vulnerabilities and data-privacy problems privately, not as public issues.

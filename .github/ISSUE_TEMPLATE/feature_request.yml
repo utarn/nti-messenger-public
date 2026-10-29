@@ -1,0 +1,68 @@
+name: Feature request
+description: Suggest a new feature or an improvement
+title: "[Feature]: "
+labels: ["needs-triage", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Please describe the problem before the
+        solution — it helps us understand what you actually need.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: How would you like it to work?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Component area
+      description: Which part of the app does this relate to?
+      options:
+        - Auth & accounts (registration, login, Friend ID, password recovery, email)
+        - Messaging (direct and group chats, sending, receipts, unsend)
+        - Friends (requests, adding by Friend ID, friend list)
+        - Calls (voice and video calls, ringing, call logs)
+        - Media & storage (images, files, voice messages, storage quota)
+        - Notifications (push, ringtones, unread badges)
+        - Devices & security (device list, sessions, logout, emergency wipe)
+        - UI/UX (look-and-feel, navigation, accessibility)
+        - Something new
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches or workarounds you have tried.
+    validations:
+      required: false
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups or references
+      description: Drag and drop sketches, mockups or links to similar products here.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and this is not a duplicate.
+          required: true
